@@ -178,20 +178,22 @@ body {
 
 .intro-dims {
   list-style: none;
-  margin: 22px 0 0;
+  margin: 22px auto 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  max-width: 360px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px 12px;
+  justify-items: stretch;
 }
 
 .intro-dims li {
-  display: inline-flex;
+  display: flex;
   align-items: flex-start;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: 999px;
+  gap: 8px;
+  padding: 10px 12px;
+  min-width: 0;
+  border-radius: 16px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(236, 252, 203, 0.9));
   border: 1px solid rgba(132, 204, 22, 0.35);
   box-shadow: 0 2px 8px rgba(101, 163, 13, 0.12);
@@ -240,6 +242,85 @@ body {
 
 .intro-dims-expl:last-of-type {
   margin-bottom: 12px;
+}
+
+#screen-intro > .card {
+  margin-bottom: 12px;
+}
+
+.intro-actions {
+  margin: 4px 0 8px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.credits-list {
+  margin: 0;
+  padding: 0 0 0 1.1em;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.credits-list li {
+  margin-bottom: 8px;
+}
+
+.credits-list li:last-child {
+  margin-bottom: 0;
+  list-style: none;
+  margin-left: -1.1em;
+  padding-left: 0;
+}
+
+.credits-role {
+  display: inline-block;
+  min-width: 5.5em;
+  margin-right: 6px;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+.official-intro {
+  margin: 0 0 14px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.official-platforms {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.official-platforms li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(132, 204, 22, 0.22);
+  font-size: 0.88rem;
+}
+
+.plat-name {
+  font-weight: 800;
+  color: var(--accent);
+  min-width: 5.2em;
+}
+
+.plat-val {
+  color: var(--muted);
+  flex: 1;
+  min-width: 0;
+  word-break: break-all;
 }
 
 .intro-card {
@@ -766,15 +847,9 @@ code {
   }
 
   .intro-dims {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    justify-items: stretch;
-  }
-
-  .intro-dims li {
-    padding: 10px 12px;
-    justify-content: center;
+    max-width: none;
+    margin-left: 12px;
+    margin-right: 12px;
   }
 
   .intro-card {

@@ -255,31 +255,72 @@ body {
   margin-right: auto;
 }
 
-.credits-list {
+.recruit-photo-wrap {
+  margin: 20px 0 8px;
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(132, 204, 22, 0.35);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-soft);
+}
+
+.recruit-photo-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.recruit-photo-caption {
   margin: 0;
-  padding: 0 0 0 1.1em;
-  font-size: 0.9rem;
+  padding: 10px 12px 12px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  text-align: center;
+  background: rgba(254, 252, 232, 0.9);
+  border-top: 1px solid rgba(132, 204, 22, 0.2);
+}
+
+.recruit-photo-caption code {
+  font-size: 0.85em;
+}
+
+.credits-body {
+  margin: 0 0 12px;
+  font-size: 0.92rem;
   line-height: 1.55;
   color: var(--text);
 }
 
-.credits-list li {
-  margin-bottom: 8px;
-}
-
-.credits-list li:last-child {
+.credits-body:last-of-type {
   margin-bottom: 0;
-  list-style: none;
-  margin-left: -1.1em;
-  padding-left: 0;
 }
 
-.credits-role {
-  display: inline-block;
-  min-width: 5.5em;
-  margin-right: 6px;
+.credits-links-wrap {
+  margin: 0 0 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  font-size: 0.92rem;
+}
+
+.credits-link {
+  color: var(--accent-mid);
   font-weight: 700;
-  color: var(--text-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.credits-link:hover {
+  color: var(--accent);
+}
+
+.credits-sep {
+  color: var(--muted);
+  user-select: none;
 }
 
 .official-intro {

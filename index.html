@@ -86,7 +86,7 @@
               共 <strong>20</strong> 道雷朋向情景题，选最贴近的一项即可；无标准答案，测出来仅供对号入座和自嘲。
             </p>
             <p class="muted small intro-edit-hint">
-              题目与分值在 <code>app.js</code>，人格长文在 <code>personas.js</code>；制作人员与官号文案在下方区块，可直接改 <code>index.html</code>。
+              题目与分值在 <code>app.js</code>，人格长文在 <code>personas.js</code>；制作说明与链接在下方区块，可直接改 <code>index.html</code>。
             </p>
           </div>
         </article>
@@ -96,12 +96,30 @@
             <span class="intro-title-icon" aria-hidden="true">◇</span>
             网页制作
           </h3>
-          <ul class="credits-list">
-            <li><span class="credits-role">策划 / 选题</span>雷朋向情景题与 LPMI 维度设计</li>
-            <li><span class="credits-role">页面开发</span>静态页交互、结果与随机任务</li>
-            <li><span class="credits-role">文案</span>人格词条与测试说明（见 <code>personas.js</code>）</li>
-            <li class="credits-note muted small">署名可在本段直接改成你们的昵称或 ID。</li>
-          </ul>
+          <p class="credits-body">
+            本网页由 <strong>米米宇宙研发组</strong> 制作，供米米同好自测娱乐。
+          </p>
+          <p class="credits-body">
+            欢迎关注我们，获取最新资讯、测试更新与同好整活；也欢迎把本页分享给更多米米。
+          </p>
+          <p class="credits-links-wrap">
+            <a
+              class="credits-link"
+              href="https://github.com/bluewewew/LPMItest"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub 项目页</a>
+            <span class="credits-sep" aria-hidden="true"> · </span>
+            <a
+              class="credits-link"
+              href="https://bluewewew.github.io/LPMItest/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >在线访问（GitHub Pages）</a>
+          </p>
+          <p class="credits-body muted small">
+            若你有主站、微博置顶或 Netlify 链接，可把上面 <code>href</code> 改成你的常用入口；全平台账号见下方「关注官号」。
+          </p>
         </article>
 
         <article class="card official-card">
@@ -125,6 +143,22 @@
         <div class="intro-actions">
           <button type="button" class="btn primary btn-start-glow" id="btn-start">开始测试</button>
         </div>
+
+        <figure class="recruit-photo-wrap">
+          <img
+            class="recruit-photo"
+            src="assets/recruit.jpg"
+            alt="米米宇宙研发组招聘"
+            width="800"
+            height="420"
+            loading="lazy"
+            decoding="async"
+            onerror="this.onerror=null;this.src='assets/recruit.svg';"
+          />
+          <figcaption class="recruit-photo-caption muted small">
+            招聘海报 · 将图片保存为 <code>assets/recruit.jpg</code> 即可替换（未上传时显示占位图）
+          </figcaption>
+        </figure>
       </section>
 
       <!-- 答题 -->

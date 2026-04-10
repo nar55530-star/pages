@@ -4,37 +4,70 @@
  * - 人格判定：getPersonalityCode（优先级与阈值见同文件内注释）。
  */
 
+/** en：英文维度名；gloss：中文释义；pole*En：量表两端英文提示 */
 const DIMENSIONS = {
-  L: { left: '考古·囤糖', right: '当下', code: 'L' },
-  P: { left: '脑补·剧场', right: '所见即所得', code: 'P' },
-  M: { left: '显微镜·证据', right: '同框即婚', code: 'M' },
-  I: { left: '发癫·分享', right: '冷静佛系', code: 'I' },
+  L: {
+    code: 'L',
+    en: 'Lore',
+    gloss: '考古倾向：挖旧糖、恋旧、囤糖',
+    left: '考古·囤糖',
+    right: '当下',
+    poleLeftEn: 'Lore',
+    poleRightEn: 'Present',
+  },
+  P: {
+    code: 'P',
+    en: 'Plot',
+    gloss: '脑补功率：空气编剧、甜向脑洞、日常小剧场',
+    left: '脑补·剧场',
+    right: '所见即所得',
+    poleLeftEn: 'Plot',
+    poleRightEn: 'Literal',
+  },
+  M: {
+    code: 'M',
+    en: 'Meticulous',
+    gloss: '证据门槛：显微镜、讲证据、理糖点',
+    left: '显微镜·证据',
+    right: '同框即婚',
+    poleLeftEn: 'Evidence',
+    poleRightEn: 'Ship',
+  },
+  I: {
+    code: 'I',
+    en: 'Intensity',
+    gloss: '情绪烈度：尖叫、分享欲 ↔ 冷静、佛系',
+    left: '发癫·分享',
+    right: '冷静佛系',
+    poleLeftEn: 'Intensity',
+    poleRightEn: 'Calm',
+  },
 };
 
 const DIM_KEYS = ['L', 'P', 'M', 'I'];
 
 /** 结果页随机一条搞笑小任务（与计分无关） */
 const FUNNY_TASKS = [
-  '打开相册，随机点开一张旧糖，对着镜子傻笑五秒（没人看见也算数）。',
-  '在群里发一句「今天也相信豹豹猫猫」，然后立刻撤回，留下一个传说。',
-  '对空气小声说：「谢谢正主投喂」——音量以邻居不报警为准。',
-  '把「没糖」在心里改成「在憋」，念一遍，感受一下语义学奇迹。',
-  '用冷水洗把脸，假装自己刚才是在冷静地沸腾，不是失控。',
-  '随机找一张同框图放大到像素级，圈出一个「新锤」发给自己。',
-  '假装路人路过，在心里夸一句：这俩氛围挺好（夸完再走）。',
-  '给自己发条微信备注：「辛苦了米米」，发送对象选「文件传输助手」。',
-  '今日尖叫额度减半：把「啊啊啊」改成气音「啧——」，保护嗓子。',
-  '打开备忘录写「明天继续」，保存，关掉，像什么都没发生过。',
-  '深呼吸三次，每次呼气脑补一段温柔小剧场，呼完就算演完。',
-  '新建一个文件夹叫「糖」，里面放一个空白文档：占位也是囤。',
-  '对路由器/手机说：辛苦了，下次别过热——它听不听不重要。',
-  '搜索框输入「同框」然后关掉，证明自己不是为了搜而搜（真的）。',
-  '设一个闹钟标题：「就再看亿遍」，时间随便，仪式感要到位。',
-  '转发一颗糖给好友，配文只写两个字：「你懂。」多余一个字都别。',
-  '把桌面/主屏整理出一块「爸妈专区」，放一张图也行，空着也行。',
-  '今晚允许自己熬夜一次，但理由必须写：「上头属于工伤复查」。',
-  '用严肃脸对屏幕点头三次，表示已阅本结果，程序感拉满。',
-  '若此刻想尖叫，请先喝一口水——官方建议：防脱水型发癫。',
+  '偷田雷手机！',
+  '在群里发一句「我签苞米协议了！」，然后立刻撤回，留下一个传说。',
+  '随机挑选一个不幸运ndz气死他',
+  '随机挑选一个不幸运xjs气死他',
+  '对空气打一套拳击',
+  '买一个雷子同款',
+  '买一个月月同款',
+  '挑战在vb一个月穿上黄裤衩',
+  '找到聊天框最近的聊天的米米跟她表白吓她一下',
+  '答应一个最近给你表白的米米吓她一下',
+  '打开ao3开始产粮！',
+  '打开剪辑软件开始产粮！',
+  '私信雷子说我好像看到你了。',
+  '私信月月说我好像看到你了',
+  '明天六点起床十一点睡觉，学习一整天奖励自己一下',
+  '明天睡一整天奖励自己一下',
+  '给雷朋开支付宝小荷包存钱攒钱各100',
+  '出门跑两圈然后奖励自己喝一杯茉莉奶白',
+  '重刷逆爱以及花絮',
+  '去一次无锡',
 ];
 
 function pickRandomTask() {
@@ -410,11 +443,24 @@ function showResult(answers) {
     const p = pct[d];
     row.innerHTML = `
       <div class="dim-row-top">
-        <span class="dim-label">${di.code}：${p}% 倾向「${di.left}」</span>
+        <div class="dim-label-block">
+          <div class="dim-line dim-line-en">${di.code} · ${di.en}</div>
+          <div class="dim-line dim-line-gloss">${di.gloss}</div>
+          <div class="dim-line dim-line-stat">${p}% 倾向「${di.left}」</div>
+        </div>
         <span class="dim-pct">${p}%</span>
       </div>
       <div class="dim-bar-track"><div class="dim-bar-fill" style="width:${p}%"></div></div>
-      <div class="dim-poles"><span>${di.left}</span><span>${di.right}</span></div>
+      <div class="dim-poles">
+        <div class="dim-pole">
+          <span class="dim-pole-cn">${di.left}</span>
+          <span class="dim-pole-en">${di.poleLeftEn}</span>
+        </div>
+        <div class="dim-pole dim-pole-right">
+          <span class="dim-pole-cn">${di.right}</span>
+          <span class="dim-pole-en">${di.poleRightEn}</span>
+        </div>
+      </div>
     `;
     bars.appendChild(row);
   });
@@ -433,7 +479,11 @@ function showResult(answers) {
     card.className = 'detail-card';
     card.innerHTML = `
       <div class="detail-card-top">
-        <span class="detail-card-title">${di.code} ${di.left} / ${di.right}</span>
+        <div class="detail-card-title-block">
+          <div class="detail-card-line detail-card-line-en">${di.code} · ${di.en}</div>
+          <div class="detail-card-line detail-card-line-gloss">${di.gloss}</div>
+          <div class="detail-card-line detail-card-line-axis">${di.left} / ${di.right}</div>
+        </div>
         <span class="detail-card-score">${pct[d]}%</span>
       </div>
       <div class="detail-card-progress" aria-hidden="true">

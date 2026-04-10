@@ -13,6 +13,35 @@ const DIMENSIONS = {
 
 const DIM_KEYS = ['L', 'P', 'M', 'I'];
 
+/** 结果页随机一条搞笑小任务（与计分无关） */
+const FUNNY_TASKS = [
+  '打开相册，随机点开一张旧糖，对着镜子傻笑五秒（没人看见也算数）。',
+  '在群里发一句「今天也相信豹豹猫猫」，然后立刻撤回，留下一个传说。',
+  '对空气小声说：「谢谢正主投喂」——音量以邻居不报警为准。',
+  '把「没糖」在心里改成「在憋」，念一遍，感受一下语义学奇迹。',
+  '用冷水洗把脸，假装自己刚才是在冷静地沸腾，不是失控。',
+  '随机找一张同框图放大到像素级，圈出一个「新锤」发给自己。',
+  '假装路人路过，在心里夸一句：这俩氛围挺好（夸完再走）。',
+  '给自己发条微信备注：「辛苦了米米」，发送对象选「文件传输助手」。',
+  '今日尖叫额度减半：把「啊啊啊」改成气音「啧——」，保护嗓子。',
+  '打开备忘录写「明天继续」，保存，关掉，像什么都没发生过。',
+  '深呼吸三次，每次呼气脑补一段温柔小剧场，呼完就算演完。',
+  '新建一个文件夹叫「糖」，里面放一个空白文档：占位也是囤。',
+  '对路由器/手机说：辛苦了，下次别过热——它听不听不重要。',
+  '搜索框输入「同框」然后关掉，证明自己不是为了搜而搜（真的）。',
+  '设一个闹钟标题：「就再看亿遍」，时间随便，仪式感要到位。',
+  '转发一颗糖给好友，配文只写两个字：「你懂。」多余一个字都别。',
+  '把桌面/主屏整理出一块「爸妈专区」，放一张图也行，空着也行。',
+  '今晚允许自己熬夜一次，但理由必须写：「上头属于工伤复查」。',
+  '用严肃脸对屏幕点头三次，表示已阅本结果，程序感拉满。',
+  '若此刻想尖叫，请先喝一口水——官方建议：防脱水型发癫。',
+];
+
+function pickRandomTask() {
+  const i = Math.floor(Math.random() * FUNNY_TASKS.length);
+  return FUNNY_TASKS[i];
+}
+
 /** @type {{ text: string, options: Record<string, { label: string } & Partial<Record<'L'|'P'|'M'|'I', number>>>}[]} */
 const questions = [
   {
@@ -355,6 +384,8 @@ function showResult(answers) {
   document.getElementById('res-name-cn').textContent = displayName;
   document.getElementById('res-code').textContent = persona.code;
   document.getElementById('res-tagline').textContent = persona.tagline;
+  const taskEl = document.getElementById('res-task-body');
+  if (taskEl) taskEl.textContent = pickRandomTask();
   renderEssay(document.getElementById('res-essay'), persona.essay || '');
   const av = document.getElementById('res-avatar');
   av.innerHTML = '';

@@ -129,27 +129,6 @@
           <p class="muted small official-more">画师小红书见下方「致谢」区。</p>
         </article>
 
-        <article class="card mimi-chars-card">
-          <h3 class="intro-title">
-            <span class="intro-title-icon" aria-hidden="true">✦</span>
-            米米宇宙 · 形象
-          </h3>
-          <div class="mimi-chars-grid">
-            <figure class="mimi-char">
-              <img src="assets/chars/feiwu-mi.png" alt="沸物米" loading="lazy" decoding="async" />
-              <figcaption>沸物米</figcaption>
-            </figure>
-            <figure class="mimi-char">
-              <img src="assets/chars/cangshu-mi.png" alt="仓鼠米" loading="lazy" decoding="async" />
-              <figcaption>仓鼠米</figcaption>
-            </figure>
-            <figure class="mimi-char">
-              <img src="assets/chars/bailan-mi.png" alt="摆烂米" loading="lazy" decoding="async" />
-              <figcaption>摆烂米</figcaption>
-            </figure>
-          </div>
-        </article>
-
         <article class="card recruit-poster-card">
           <h3 class="intro-title">
             <span class="intro-title-icon" aria-hidden="true">◇</span>
@@ -170,9 +149,22 @@
             <p class="recruit-template-tip">
               <strong>投递提醒：</strong>请下载简历模板，按说明填写后投递；邮件以海报内为准，注意截止时间与格式要求。
             </p>
-            <a class="btn-template" href="assets/米米宇宙招聘.doc" download>下载简历模板（Word）</a>
+            <a
+              class="btn-template"
+              href="https://raw.githubusercontent.com/bluewewew/LPMItest/main/assets/%E7%B1%B3%E7%B1%B3%E5%AE%87%E5%AE%99%E6%8B%9B%E8%81%98.doc"
+              download="米米宇宙招聘.doc"
+              target="_blank"
+              rel="noopener noreferrer"
+              >下载简历模板（Word）</a>
+            <a
+              class="btn-template btn-template-secondary"
+              href="https://github.com/bluewewew/LPMItest/blob/main/assets/%E7%B1%B3%E7%B1%B3%E5%AE%87%E5%AE%99%E6%8B%9B%E8%81%98.doc"
+              target="_blank"
+              rel="noopener noreferrer"
+              >在 GitHub 打开模板文件</a>
             <p class="muted small recruit-template-note">
-              若提示无法下载，请将本机「米米宇宙招聘.doc」复制到仓库 <code>assets/</code> 目录并重新部署；模板文件名需一致。
+              下载走 GitHub 直链；若仍失败，请确认仓库 <code>assets/米米宇宙招聘.doc</code> 已上传并推送，或点「在 GitHub 打开」页面内
+              <strong>⋯ → Download</strong>。也可向海报内邮箱索取 Word 版。
             </p>
           </div>
         </article>
@@ -247,6 +239,7 @@
         <div class="result-hero card">
           <p class="eyebrow">你的人格类型是：</p>
           <h2 class="type-name-cn" id="res-name-cn">——</h2>
+          <div id="res-char-portrait" class="res-char-portrait" hidden></div>
           <p class="type-code" id="res-code">????</p>
           <div class="avatar-placeholder" id="res-avatar">
             <span>人格配图占位<br />在 <code>PERSONAS_BY_CODE</code> 中设置 <code>image</code> 路径</span>

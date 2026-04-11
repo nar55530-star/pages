@@ -46,8 +46,11 @@ const DIMENSIONS = {
 
 const DIM_KEYS = ['L', 'P', 'M', 'I'];
 
-/** 沸物米 / 仓鼠米 / 摆烂米 在结果页名称下展示的形象（与 PERSONAS_BY_CODE 对应） */
+/** 结果页名称下立绘（与 PERSONAS_BY_CODE 对应） */
 const CHAR_IMAGE_BY_CODE = {
+  CHAF: 'assets/chars/tianyumi.png',
+  SWEET: 'assets/chars/zhuanghuo-mi.png',
+  BARK: 'assets/chars/goujiao-mi.png',
   BOIL: 'assets/chars/feiwu-mi.png',
   VAUL: 'assets/chars/cangshu-mi.png',
   CHLL: 'assets/chars/bailan-mi.png',

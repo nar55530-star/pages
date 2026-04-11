@@ -8,6 +8,19 @@
           "value": "SAMEORIGIN"
         }
       ]
+    },
+    {
+      "source": "/assets/(.*)\\.doc",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/msword"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     }
   ]
 }

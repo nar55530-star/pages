@@ -64,6 +64,11 @@ const CHAR_IMAGE_BY_CODE = {
   ECHO:'assets/chars/quanjunfusong-mi.png',
   ROOT:'assets/chars/dunkeng-mi.png',
   HUSK:'assets/chars/kongzhuan-mi.png',
+   ARCH:'assets/chars/kaoju-mi.png',
+  LOOP:'assets/chars/huisu-mi.png',
+  CHAF:'assets/chars/jinyu-mi.png',
+  TAP:'assets/chars/shousu-mi.png',
+  FREN:'assets/chars/shishang-mi.png',
 };
 
 /** 结果页随机一条搞笑小任务（与计分无关） */

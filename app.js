@@ -58,6 +58,12 @@ const CHAR_IMAGE_BY_CODE = {
   JUDG: 'assets/chars/tiezui-mi.png',
   MONK: 'assets/chars/zhenyan-mi.png',
   MIST: 'assets/chars/xiangmei-mi.png',
+  SIRN:'assets/chars/yapao-mi.png',
+  FURY:'assets/chars/zhamao-mi.png',
+  STOM:'assets/chars/laladui-mi.png',
+  ECHO:'assets/chars/quanjunfusong-mi.png',
+  ROOT:'assets/chars/dunkeng-mi.png',
+  HUSK:'assets/chars/kongzhuan-mi.png',
 };
 
 /** 结果页随机一条搞笑小任务（与计分无关） */

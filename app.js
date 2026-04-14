@@ -48,7 +48,7 @@ const DIM_KEYS = ['L', 'P', 'M', 'I'];
 
 /** 仅当仓库内有对应立绘时展示；未列出的类型不显示图 */
 const CHAR_IMAGE_BY_CODE = {
-  CHAF: 'assets/chars/tianyumi.png',
+ 
   SWEET: 'assets/chars/zhuanghuo-mi.png',
   BARK: 'assets/chars/goujiao-mi.png',
   BOIL: 'assets/chars/feiwu-mi.png',
